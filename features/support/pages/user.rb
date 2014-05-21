@@ -1,7 +1,7 @@
 class TestUser 
-	attr_reader :username, :password
+	attr_accessor :username, :password
 
-	def initialize(args)
+	def initialize(args = {})
 		@username = args[:username]
 		@password = args[:password]
 	end

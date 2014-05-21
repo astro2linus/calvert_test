@@ -1,0 +1,4 @@
+@spacex
+Feature: Test
+	Scenario: Test
+		Given I want to open a html file using Capybara

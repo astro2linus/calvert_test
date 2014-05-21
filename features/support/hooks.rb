@@ -6,11 +6,15 @@ Before do |scenario|
   # executed.
   logout_link = first('Logout')
   click logout_link if logout_link
+  $user = nil
 end
 
 # After hooks will be run after the last step of each scenario, 
 # even when there are failing, undefined, pending or skipped steps.
 
 After do |scenario|
-
+  if(scenario.failed?)
+    save_screenshot("screenshots/#{scenario.__id__}.png")
+    embed("screenshots/#{scenario.__id__}.png", "image/png", "SCREENSHOT")
+  end
 end 

@@ -1,7 +1,6 @@
 require 'capybara'
 include Capybara::DSL
-
-Capybara.app_host = 'https://calvert:intridea4calvert@dev.calvert.intridea.com'
+Capybara.app_host = 'http://localhost:3000'
 
 Capybara.current_driver = :selenium
 
@@ -10,3 +9,4 @@ Capybara.register_driver :selenium_with_long_timeout do |app|
   client.timeout = 120
   Capybara::Driver::Selenium.new(app, :browser => :firefox, :http_client => client)
 end
+
